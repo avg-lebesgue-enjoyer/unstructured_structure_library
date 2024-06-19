@@ -9,5 +9,5 @@ This exists for me to:
 This is being shared publically for others' benefit. I encourage you to write something like this on your own too.
 
 # Changelog
-- 2024-06-19_18-00: Wtf is a makefile? ig I know now
-- 2024-06-19_16-16: Spawned in
+- **2024-06-19_18-00**: Wtf is a makefile? ig I know now
+- **2024-06-19_16-16**: Spawned in
