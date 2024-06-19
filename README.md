@@ -19,6 +19,7 @@ This is being shared publically for others' benefit. **I encourage you to write 
 - **main.c** now exists
 - **main.h** also exists, with rudimentary documentation
 - I now understand how to structure files in subdirectories etc.
+- Copied over `2023-10-14_13-00_Algos_Datas_Summary.pdf`
 - Wtf is a makefile? ig I know now
 
 ### 2024-06-19_16-16
