@@ -16,6 +16,8 @@ This is being shared publically for others' benefit. **I encourage you to write 
 # Changelog
 
 ### 2024-06-19_18-00
+- **main.c** now exists.
+- I now understand how to structure files in subdirectories etc.
 - Wtf is a makefile? ig I know now
 
 ### 2024-06-19_16-16
