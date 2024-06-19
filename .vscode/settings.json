@@ -6,6 +6,7 @@
         "stdint-gcc.h": "c",
         "ctype.h": "c",
         "corecrt_wstdlib.h": "c",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "string.h": "c"
     }
 }
