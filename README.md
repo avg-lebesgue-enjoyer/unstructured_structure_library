@@ -29,7 +29,6 @@ This is being shared publically for others' benefit. **I encourage you to write 
     - [ ] Queues
         - [ ] Vanilla queue
         - [ ] Priority queue...
-            - [ ] ...via linked list
             - [ ] ...via extensible list
             - [ ] ...via heap
         - [ ] Adaptable priority queue (via heap)
@@ -44,13 +43,11 @@ This is being shared publically for others' benefit. **I encourage you to write 
     - [ ] Vanilla tree *(arbitrary number of children)*
 - [ ] Sets, maps and hashing
     - [ ] Map...
-        - [ ] ...via unsorted list (ew)
-        - [ ] ...via sorted list (ew2)
         - [ ] ...via hash table (hell yeah)
-        - [ ] ...via self-balancing tree (mmmm)
+        - [ ] ...via (self-balancing) BST
     - [ ] Set
 - [ ] Graphs
-    - [ ] Edge list graph
+    - [ ] Edge list graph (?)
     - [ ] Adjacency list graph
     - [ ] Adjacency map graph
     - [ ] Adjacency matrix graph
@@ -105,6 +102,9 @@ This is being shared publically for others' benefit. **I encourage you to write 
 
 
 # Changelog
+
+### 2024-06-20_21-10
+- *Immediately* reduced the scope of [# Progress](#progress)
 
 ### 2024-06-20_20-40
 - [# Progress](#progress) now exists. I'm afraid of setting my scope too large, so I might reduce it in the future (in particular, I might get rid of "stuff that just doesn't need to be here, really" like "map via unsorted list (ew)")
