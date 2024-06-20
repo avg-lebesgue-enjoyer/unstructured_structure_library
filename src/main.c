@@ -12,8 +12,10 @@
 /* SECTION: #include */
 
 #include "main.h"
-#include "general_linear_structures/static/array.h"
-#include "general_linear_structures/static/test/testArray.h"
+#include "allTheStructures.h"
+#include "allTheStructureTests.h"
+#include "algos/allTheAlgos.h"
+#include "algos/allTheAlgoTests.h"
 
 
 
@@ -42,6 +44,8 @@ int main(int argc, char *argv[]) {
     for (int arg = 0; arg < argc; arg++) {
         if (! strncmp(argv[arg], TESTARRAY, TESTARRAYLENGTH)) {
             testArrayDotC();
+        } else if (! strncmp(argv[arg], TESTLINSEARCH, TESTLINSEARCHLENGTH)) {
+            testLinsearchDotC();
         }
     }
     

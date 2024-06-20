@@ -1,5 +1,5 @@
-#ifndef main_H
-#define main_H
+#ifndef testLinsearch_H
+#define testLinsearch_H
 
 /* SECTION: #include */
 
@@ -13,17 +13,15 @@
 
 /* SECTION: Function prototypes */
 
-int main(int argc, char *argv[]);
+int testLinsearchDotC(void);
 
+int testLinsearchByteArray(void);
+int linsearchBytePresent(void);
+int linsearchByteAbsent(void);
 
-
-/* SECTION: Command-line argument copypastas */
-
-#define TESTARRAY "array.c"
-#define TESTARRAYLENGTH (8)
-
-#define TESTLINSEARCH "linsearch.c"
-#define TESTLINSEARCHLENGTH (12)
+int testLinsearch(void);
+int linsearchPresent(void);
+int linsearchAbsent(void);
 
 
 

@@ -8,6 +8,7 @@
         "corecrt_wstdlib.h": "c",
         "stdio.h": "c",
         "string.h": "c",
-        "array.h": "c"
+        "array.h": "c",
+        "allthestructures.h": "c"
     }
 }

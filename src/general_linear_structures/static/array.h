@@ -47,4 +47,6 @@ ByteArray constructByteArray(uint32_t length);
  */
 Array newArray(uint32_t length, uint32_t cellSize);
 
+
+
 #endif

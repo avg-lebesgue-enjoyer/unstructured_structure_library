@@ -102,6 +102,10 @@ This is being shared publically for others' benefit. **I encourage you to write 
 
 # Changelog
 
+### 2024-06-21_00-50
+- Implemented linear search in `algos/search/linsearch.c`, with tests invoked by `> run linsearch.c`
+- I understand pointer arithmetic, especially with `void*`s, much better now. Working at the low level is a pain in the ass... thank heavens I'm not writing this in `asm`.
+
 ### 2024-06-20_23-00
 - Implemented an array in `general_linear_structures/static/array.c`, with tests
 - Changed parameters to executable. Now, you give a list of names of files to be tested. For now, only an argument of `"array.c"` is supported, and it runs tests on the `ByteArray` and `Array` I implemented
