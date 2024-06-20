@@ -19,7 +19,7 @@ typedef struct ByteArray {
     uint8_t* start;     /** Pointer to the zeroth cell of the array. */
 } ByteArray;
 
-/** (Very unsafe) array. */
+/** (Probably very unsafe) array. */
 typedef struct Array {
     uint32_t length;    /** Length of the array. Going past this is a buffer overflow. */
     uint32_t cellSize;  /** Size of each cell of the array. */
