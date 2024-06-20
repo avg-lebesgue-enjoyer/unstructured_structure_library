@@ -47,7 +47,7 @@ $(EXE): $(OBJECTS)
 %.o: %.c %.h
 
 # Target to clean up after us
-# Not working on my machine. Oh well.
+# Not working on my machine. Oh well. I hate Windows
 clean:
 	-rm -f $(EXE)
 	-rm -f $(OBJECTS)

@@ -39,6 +39,11 @@ If they are declared, the parameters to the main function shall obey the followi
  * @return int
  */
 int main(int argc, char *argv[]) {
-    testArrayDotC();
+    for (int arg = 0; arg < argc; arg++) {
+        if (! strncmp(argv[arg], TESTARRAY, TESTARRAYLENGTH)) {
+            testArrayDotC();
+        }
+    }
+    
     return 0;
 }

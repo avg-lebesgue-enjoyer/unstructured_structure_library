@@ -17,4 +17,12 @@ int main(int argc, char *argv[]);
 
 
 
+/* SECTION: */
+
+#define TESTARRAY "array.c"
+#define TESTARRAYLENGTH (8)
+
+
+
+
 #endif

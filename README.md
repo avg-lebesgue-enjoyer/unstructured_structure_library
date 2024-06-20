@@ -104,6 +104,7 @@ This is being shared publically for others' benefit. **I encourage you to write 
 
 ### 2024-06-20_23-00
 - Implemented an array in `general_linear_structures/static/array.c`, with tests
+- Changed parameters to executable. Now, you give a list of names of files to be tested. For now, only an argument of `"array.c"` is supported, and it runs tests on the `ByteArray` and `Array` I implemented
 - Actaully understood pointers a bit better
 
 ### 2024-06-20_21-10
