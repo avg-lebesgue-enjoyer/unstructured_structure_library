@@ -15,6 +15,9 @@ This is being shared publically for others' benefit. **I encourage you to write 
 
 # Changelog
 
+### 2024-06-20_20-40
+- `.gitignore` now exists (yes I'm stupid, no don't fire me)
+
 ### 2024-06-19_18-00
 - `main.c` now exists
 - `main.h` also exists, with rudimentary documentation
