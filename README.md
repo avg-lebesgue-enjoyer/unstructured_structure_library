@@ -107,7 +107,7 @@ This is being shared publically for others' benefit. **I encourage you to write 
 # Changelog
 
 ### 2024-06-20_20-40
-- `# Progress` now exists. I'm afraid of setting my scope too large, so I might reduce it in the future (in particular, I might get rid of "stuff that just doesn't need to be here, really" like "map via unsorted list (ew)")
+- [# Progress](#progress) now exists. I'm afraid of setting my scope too large, so I might reduce it in the future (in particular, I might get rid of "stuff that just doesn't need to be here, really" like "map via unsorted list (ew)")
 - `.gitignore` now exists (yes I'm stupid, no don't fire me)
 
 ### 2024-06-19_18-00
