@@ -69,7 +69,7 @@ This is being shared publically for others' benefit. **I encourage you to write 
         - [ ] Lexicographic sort
         - [ ] Bin radix sort
 - [ ] Search
-    - [ ] Linsearch
+    - [x] Linsearch
     - [ ] Binsearch
 - [ ] Heap methods
     - [ ] Upheap
