@@ -103,7 +103,7 @@ This is being shared publically for others' benefit. **I encourage you to write 
 # Changelog
 
 ### 2024-06-20_23-00
-- Implemented an array in `array.c`, with tests
+- Implemented an array in `general_linear_structures/static/array.c`, with tests
 - Actaully understood pointers a bit better
 
 ### 2024-06-20_21-10
