@@ -47,6 +47,25 @@ ByteArray constructByteArray(uint32_t length);
  */
 Array newArray(uint32_t length, uint32_t cellSize);
 
+/**
+ * @brief Index into an array
+ * 
+ * @param inHere Array in which to index
+ * @param atHere uint32_t location in which to index. UNSAFE OPERATION when atHere >= inHere.length (just like normal indexing lol)
+ * @return void* 
+ */
+void* indexArray(Array inHere, uint32_t atHere);
+
+/**
+ * @brief Check if an array, at some index, stores a value equal to a target value
+ * 
+ * @param inHere Array into which to index
+ * @param atHere uint32_t index at which to look. UNSAFE OPERATION when atHere >= inHere.length (just like normal indexing lol)
+ * @param againstThis void* to target value to check against. MUST be a pointer to inHere.cellSize bytes.
+ * @return uint8_t 1 iff the target value is present at the specified index in the specified array; 0 else.
+ */
+uint8_t compareArrayElement(Array inHere, uint32_t atHere, void* againstThis);
+
 
 
 #endif

@@ -27,20 +27,30 @@ uint32_t linsearchByte(ByteArray inHere, uint8_t target) {
     return inHere.length;
 }
 
+// NOTE: First attempt at this code. This is what made me make array.c ~> index() and array.c ~> compareArrayElement().
+// uint32_t linsearch(Array inHere, void* target) {
+//     const uint8_t* targetByte = target; // NOTE: typecast (void*) --> (uint8_t*)
+//     uint8_t* pInHere = inHere.start; // NOTE: typecast (void*) --> (uint8_t*)
+//     for (uint32_t i = 0; i < inHere.length; i++) {
+//         // Check whether the data here matches the target data, byte by byte.
+//         int match = 1;
+//         uint32_t j = 0;
+//         while ((j < inHere.cellSize) && match) {
+//             // Compare byte j of inHere[i] against byte j of the target
+//             pInHere = inHere.start + i * inHere.cellSize + j; // NOTE: typecast (void*) --> (uint8_t*)
+//             match = (*(targetByte + j)) == *pInHere;
+//             j++;
+//         }
+//         if (match) {
+//             return i;
+//         }
+//     }
+//     return inHere.length;
+// }
+
 uint32_t linsearch(Array inHere, void* target) {
-    const uint8_t* targetByte = target; // NOTE: typecast (void*) --> (uint8_t*)
-    uint8_t* pInHere = inHere.start; // NOTE: typecast (void*) --> (uint8_t*)
     for (uint32_t i = 0; i < inHere.length; i++) {
-        // Check whether the data here matches the target data, byte by byte.
-        int match = 1;
-        uint32_t j = 0;
-        while ((j < inHere.cellSize) && match) {
-            // Compare byte j of inHere[i] against byte j of the target
-            pInHere = inHere.start + i * inHere.cellSize + j; // NOTE: typecast (void*) --> (uint8_t*)
-            match = (*(targetByte + j)) == *pInHere;
-            j++;
-        }
-        if (match) {
+        if (compareArrayElement(inHere, i, target)) {
             return i;
         }
     }

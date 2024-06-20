@@ -104,6 +104,7 @@ This is being shared publically for others' benefit. **I encourage you to write 
 
 ### 2024-06-21_00-50
 - Implemented linear search in `algos/search/linsearch.c`, with tests invoked by `> run linsearch.c`
+- Added `array.c ~> indexArray()` and `array.c ~> compareArrayElement()`, because that *needs* abstracting
 - I understand pointer arithmetic, especially with `void*`s, much better now. Working at the low level is a pain in the ass... thank heavens I'm not writing this in `asm`.
 
 ### 2024-06-20_23-00
