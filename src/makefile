@@ -57,10 +57,7 @@ clean:
 # SECTION: Stuff that means lots to me
 
 # The name of the source files
-SOURCES = main.c
+SOURCES = main.c general_linear_structures/static/array.c general_linear_structures/static/test/testArray.c
 
 # Finally we need to tell "make" what source and header file each object file depends on
 # NOTE: Due to rule [1.] above, we don't need to explicitly list these below (I think).
-# main.o: main.c main.h
-# sideways.o: sideways.c sideways.h
-# subfolder/gaming.o: subfolder/gaming.c subfolder/gaming.h

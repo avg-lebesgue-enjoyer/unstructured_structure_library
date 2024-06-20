@@ -17,10 +17,9 @@ This is being shared publically for others' benefit. **I encourage you to write 
 
 ### Data Structures
 
-- [x] Fuck all
 - [ ] General linear structures
-    - [ ] Static
-        - [ ] Array
+    - [x] Static
+        - [x] Array
     - [ ] Dynamic
         - [ ] Linked list
         - [ ] Extensible list

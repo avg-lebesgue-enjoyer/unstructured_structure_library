@@ -12,6 +12,8 @@
 /* SECTION: #include */
 
 #include "main.h"
+#include "general_linear_structures/static/array.h"
+#include "general_linear_structures/static/test/testArray.h"
 
 
 
@@ -37,6 +39,6 @@ If they are declared, the parameters to the main function shall obey the followi
  * @return int
  */
 int main(int argc, char *argv[]) {
-    printf("Done.\n");
+    testArrayDotC();
     return 0;
 }
