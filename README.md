@@ -54,7 +54,9 @@ This is being shared publically for others' benefit. **I encourage you to write 
 
 ### Algorithms
 
-- [x] Fuck all (let's goooooo)
+- [x] Search
+    - [x] Linsearch
+    - [x] Binsearch
 - [ ] Sort
     - [ ] Comparison sort
         - [ ] Selection sort
@@ -68,9 +70,6 @@ This is being shared publically for others' benefit. **I encourage you to write 
         - [ ] Bucket sort
         - [ ] Lexicographic sort
         - [ ] Bin radix sort
-- [ ] Search
-    - [x] Linsearch
-    - [ ] Binsearch
 - [ ] Heap methods
     - [ ] Upheap
     - [ ] Downheap
@@ -101,6 +100,11 @@ This is being shared publically for others' benefit. **I encourage you to write 
 
 
 # Changelog
+
+### 2024-06-21_16-40
+- Implemented binary search in `algos/search/binsearch.c`, with tests invoked by `> run binsearch.c`
+- Added `array.c ~> arrayElementEquals()` (an alias for `array.c ~> compareArrayElement()`) and `array.c ~> arrayElementLess()`, because that second one *needs* abstracting and its name inspires a better name for `array.c ~> compareArrayElement()`.
+- I understand lexicographic comparison better now. *Thank heavens* I'm not writing this in `asm`.
 
 ### 2024-06-21_00-50
 - Implemented linear search in `algos/search/linsearch.c`, with tests invoked by `> run linsearch.c`

@@ -57,7 +57,7 @@ clean:
 # SECTION: Stuff that means lots to me
 
 # The name of the source files
-SOURCES = main.c general_linear_structures/static/array.c general_linear_structures/static/test/testArray.c algos/search/linsearch.c algos/search/test/testLinsearch.c
+SOURCES = main.c general_linear_structures/static/array.c general_linear_structures/static/test/testArray.c algos/search/linsearch.c algos/search/test/testLinsearch.c algos/search/binsearch.c algos/search/test/testBinsearch.c
 #SOURCES = *.c
 
 # Finally we need to tell "make" what source and header file each object file depends on

@@ -46,8 +46,10 @@ int main(int argc, char *argv[]) {
             testArrayDotC();
         } else if (! strncmp(argv[arg], TESTLINSEARCH, TESTLINSEARCHLENGTH)) {
             testLinsearchDotC();
+        } else if (! strncmp(argv[arg], TESTBINSEARCH, TESTBINSEARCHLENGTH)) {
+            testBinsearchDotC();
         }
     }
-    
+
     return 0;
 }

@@ -66,6 +66,18 @@ void* indexArray(Array inHere, uint32_t atHere);
  */
 uint8_t compareArrayElement(Array inHere, uint32_t atHere, void* againstThis);
 
+/** Alias for `compareArrayElement()` (I didn't like that name). The compiler should figure out that this method is unnecessary, 
+ *  so I'm fine with this "inefficiency". */
+uint8_t arrayElementEquals(Array inHere, uint32_t atHere, void* againstThis);
 
+/**
+ * @brief Check if an array, at some index, stored a value less than a target value. Comparison is done as UNSIGNED INTEGERS.
+ * 
+ * @param inHere Array into which to index
+ * @param atHere uint32_t index at which to look. UNSAFE OPERATION when atHere >= inHere.length (just like normal indexing lol)
+ * @param againstThis void* to target value to check against. MUST be a pointer to inHere.cellSize bytes.
+ * @return uint8_t 1 iff the value at the specified index in the specified array is less than the target value; 0 else.
+ */
+uint8_t arrayElementLess(Array inHere, uint32_t atHere, void* againstThis);
 
 #endif

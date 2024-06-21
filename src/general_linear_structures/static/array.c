@@ -51,3 +51,25 @@ uint8_t compareArrayElement(Array inHere, uint32_t atHere, void* againstThis) {
     }
     return match;
 }
+
+uint8_t arrayElementEquals(Array inHere, uint32_t atHere, void* againstThis) {
+    return compareArrayElement(inHere, atHere, againstThis);
+}
+
+uint8_t arrayElementLess(Array inHere, uint32_t atHere, void* againstThis) {
+    // Lexicographic comparison, done MSB --> LSB.
+    uint8_t* pArrayByte;
+    uint8_t* targetByte = againstThis; // NOTE: typecast (void*) --> (uint8_t*)
+    uint32_t j = inHere.cellSize;
+    while (1 <= j) {
+        j--;
+        // Compare byte j of inHere[i] against byte j of the target
+        pArrayByte = inHere.start + atHere * inHere.cellSize + j; // NOTE: typecast (void*) --> (uint8_t*)
+        if (*pArrayByte < (*(targetByte + j))) {
+            return 1;
+        } else if ((*(targetByte + j)) < *pArrayByte) {
+            return 0;
+        } // If the bytes are equal, keep checking...
+    }
+    return 0;
+}
