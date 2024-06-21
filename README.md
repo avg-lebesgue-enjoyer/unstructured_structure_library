@@ -101,6 +101,11 @@ This is being shared publically for others' benefit. **I encourage you to write 
 
 # Changelog
 
+### 2024-06-21_18-25
+- Implemented a linked list of bytes, with tests invoked by `> run linkedList.c`.
+- I understand why object-oriented languages are pass-by-reference now! Pass-by-values **sucks ass**!
+- I remembered to include "free all the memory pls" methods this time. I need to write one of those to clean up the arrays too...
+
 ### 2024-06-21_16-40
 - Implemented binary search in `algos/search/binsearch.c`, with tests invoked by `> run binsearch.c`
 - Added `array.c ~> arrayElementEquals()` (an alias for `array.c ~> compareArrayElement()`) and `array.c ~> arrayElementLess()`, because that second one *needs* abstracting and its name inspires a better name for `array.c ~> compareArrayElement()`.

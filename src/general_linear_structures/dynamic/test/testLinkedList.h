@@ -1,5 +1,5 @@
-#ifndef main_H
-#define main_H
+#ifndef testLinkedList_H
+#define testLinkedList_H
 
 /* SECTION: #include */
 
@@ -13,23 +13,14 @@
 
 /* SECTION: Function prototypes */
 
-int main(int argc, char *argv[]);
+int testLinkedListDotC(void);
 
+int testByteLinkedList(void);
+int byteLinkedListConstructs(void);
+int byteLinkedListNodeConstructs(void);
+int byteLinkedListBuilds(void);
 
-
-/* SECTION: Command-line argument copypastas */
-
-#define TESTARRAY "array.c"
-#define TESTARRAYLENGTH (8)
-
-#define TESTLINSEARCH "linsearch.c"
-#define TESTLINSEARCHLENGTH (12)
-
-#define TESTBINSEARCH "binsearch.c"
-#define TESTBINSEARCHLENGTH (12)
-
-#define TESTLINKEDLIST "linkedList.c"
-#define TESTLINKEDLISTLENGTH (13)
+int testLinkedList(void);
 
 
 

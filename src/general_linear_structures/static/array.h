@@ -1,3 +1,16 @@
+/**
+ * @file array.h
+ * @author Gabriel Field
+ * @brief 
+ * @version 0.1
+ * @date 2024-06-19
+ * 
+ * @copyright just don't misuse my work pls
+ * 
+ */
+
+// FIXME: We need memory-freeing methods for ByteArray and for Array.
+
 #ifndef array_H
 #define array_H
 

@@ -10,6 +10,10 @@
         "string.h": "c",
         "array.h": "c",
         "allthestructures.h": "c",
-        "binsearch.h": "c"
+        "binsearch.h": "c",
+        "allthestructuretests.h": "c",
+        "allthealgotests.h": "c",
+        "allthealgos.h": "c",
+        "linkedlist.h": "c"
     }
 }
