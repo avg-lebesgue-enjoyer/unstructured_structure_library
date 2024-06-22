@@ -52,6 +52,13 @@ typedef struct Array {
 ByteArray constructByteArray(uint32_t length);
 
 /**
+ * @brief Free ALL MEMORY used by a specified array of bytes.
+ * 
+ * @param me `ByteArray` to free.
+ */
+void killByteArray(ByteArray me);
+
+/**
  * @brief Construct and return a new Array
  * 
  * @param length of the array to be constructed
@@ -59,6 +66,14 @@ ByteArray constructByteArray(uint32_t length);
  * @return Array filled with garbage values
  */
 Array newArray(uint32_t length, uint32_t cellSize);
+
+/**
+ * @brief Free ALL MEMORY used by a specified array.
+ * 
+ * @param me `Array` to free.
+ */
+void killArray(Array me);
+
 
 /**
  * @brief Index into an array

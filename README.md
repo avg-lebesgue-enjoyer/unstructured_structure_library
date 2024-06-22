@@ -105,6 +105,7 @@ This is being shared publically for others' benefit. **I encourage you to write 
 ### 2024-06-22_17-20
 - Finished writing tests for a linked list of bytes.
 - Updated [# Purpose](#purpose).
+- `array.c ~> killArray()` and `array.c ~> killByteArray()` now exist.
 
 ### 2024-06-21_18-25
 - Implemented a linked list of bytes, with SOME tests invoked by `> run linkedList.c`.

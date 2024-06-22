@@ -23,6 +23,10 @@ ByteArray constructByteArray(uint32_t length) {
     return returnMe;
 }
 
+void killByteArray(ByteArray me) {
+    free(me.start);
+}
+
 
 
 /* SECTION: Generic array */
@@ -32,6 +36,10 @@ Array newArray(uint32_t length, uint32_t cellSize) {
     void* start = malloc(cellSize * length);
     Array returnMe = { .length = length, .cellSize = cellSize, .start = start };
     return returnMe;
+}
+
+void killArray(Array me) {
+    free(me.start);
 }
 
 void* indexArray(Array inHere, uint32_t atHere) {
