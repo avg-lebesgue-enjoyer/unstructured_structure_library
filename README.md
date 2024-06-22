@@ -8,6 +8,7 @@ This exists for me to:
 - Understand how to implement and operate on data structures at a low level
 - Practice writing in C
 - Tick this off the *Computer Science student bucket list*
+The tests I've written **are not rigorous**, because writing tests sucks all the joy out of programming.
 
 This is being shared publically for others' benefit. **I encourage you to write something like this on your own before looking through mine.**
 
@@ -100,6 +101,10 @@ This is being shared publically for others' benefit. **I encourage you to write 
 
 
 # Changelog
+
+### 2024-06-22_17-20
+- Finished writing tests for a linked list of bytes.
+- Updated [# Purpose](#purpose).
 
 ### 2024-06-21_18-25
 - Implemented a linked list of bytes, with SOME tests invoked by `> run linkedList.c`.

@@ -22,7 +22,11 @@ int testLinkedListDotC(void) {
     printf("<?> Running tests in testLinkedList.c...\n");
     int result =
         testByteLinkedList()
-        + testLinkedList();
+        + testLinkedList()
+        + testByteLinkedListLength()
+        + testByteLinkedListGet()
+        + testByteLinkedListSet()
+        + testByteLinkedListInsert();
     printf("<?> ...end tests in testLinkedList.c; %d tests failed.\n", result);
     return result;
 }
@@ -77,6 +81,79 @@ int byteLinkedListBuilds(void) {
     printf("<?> ...end test testLinkedList.c ~> byteLinkedListBuilds(); success.\n");
     killByteLinkedList(list);
     return 0;
+}
+
+int testByteLinkedListLength(void) {
+    printf("<?> Running test testLinkedList.c ~> testByteLinkedListLength()...\n");
+    ByteLinkedList* list = newByteLinkedList();
+    byteLinkedListPrepend(list, newByteLinkedListNode(0x69));
+    byteLinkedListPrepend(list, newByteLinkedListNode(0x42));
+    byteLinkedListPrepend(list, newByteLinkedListNode(0xab));
+    if ( byteLinkedListLength(list) == 3 ) {
+        printf("<?> ...end test testLinkedList.c ~> testByteLinkedListLength(); success.\n");
+        killByteLinkedList(list);
+        return 0;
+    } else {
+        printf("<?> F..end test testLinkedList.c ~> testByteLinkedListLength(); success.\n");
+        killByteLinkedList(list);
+        return 1;
+    }
+}
+
+int testByteLinkedListGet(void) {
+    printf("<?> Running test testLinkedList.c ~> testByteLinkedListGet()...\n");
+    ByteLinkedList* list = newByteLinkedList();
+    byteLinkedListPrepend(list, newByteLinkedListNode(0x69));
+    byteLinkedListPrepend(list, newByteLinkedListNode(0x42));
+    byteLinkedListPrepend(list, newByteLinkedListNode(0xab));
+    // <?>
+    if ( byteLinkedListGet(list, 2) == 0x69 ) {
+        printf("<?> ...end test testLinkedList.c ~> testByteLinkedListGet(); success.\n");
+        killByteLinkedList(list);
+        return 0;
+    } else {
+        printf("<?> F..end test testLinkedList.c ~> testByteLinkedListGet(); success.\n");
+        killByteLinkedList(list);
+        return 1;
+    }
+}
+
+int testByteLinkedListSet(void) {
+    printf("<?> Running test testLinkedList.c ~> testByteLinkedListSet()...\n");
+    ByteLinkedList* list = newByteLinkedList();
+    byteLinkedListPrepend(list, newByteLinkedListNode(0x69));
+    byteLinkedListPrepend(list, newByteLinkedListNode(0x42));
+    byteLinkedListPrepend(list, newByteLinkedListNode(0xab));
+    // <?>
+    byteLinkedListSet(list, 1, 0x24);
+    if ( byteLinkedListGet(list, 1) == 0x24 ) {
+        printf("<?> ...end test testLinkedList.c ~> testByteLinkedListSet(); success.\n");
+        killByteLinkedList(list);
+        return 0;
+    } else {
+        printf("<?> F..end test testLinkedList.c ~> testByteLinkedListSet(); success.\n");
+        killByteLinkedList(list);
+        return 1;
+    }
+}
+
+int testByteLinkedListInsert(void) {
+    printf("<?> Running test testLinkedList.c ~> testByteLinkedListInsert()...\n");
+    ByteLinkedList* list = newByteLinkedList();
+    byteLinkedListPrepend(list, newByteLinkedListNode(0x69));
+    byteLinkedListPrepend(list, newByteLinkedListNode(0x42));
+    byteLinkedListPrepend(list, newByteLinkedListNode(0xab));
+    // <?>
+    byteLinkedListInsert(list, 1, newByteLinkedListNode(0x24));
+    if ( byteLinkedListGet(list, 2) == 0x24 ) {
+        printf("<?> ...end test testLinkedList.c ~> testByteLinkedListInsert(); success.\n");
+        killByteLinkedList(list);
+        return 0;
+    } else {
+        printf("<?> F..end test testLinkedList.c ~> testByteLinkedListInsert(); success.\n");
+        killByteLinkedList(list);
+        return 1;
+    }
 }
 
 

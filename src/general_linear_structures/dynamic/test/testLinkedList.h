@@ -19,6 +19,10 @@ int testByteLinkedList(void);
 int byteLinkedListConstructs(void);
 int byteLinkedListNodeConstructs(void);
 int byteLinkedListBuilds(void);
+int testByteLinkedListLength(void);
+int testByteLinkedListGet(void);
+int testByteLinkedListSet(void);
+int testByteLinkedListInsert(void);
 
 int testLinkedList(void);
 
