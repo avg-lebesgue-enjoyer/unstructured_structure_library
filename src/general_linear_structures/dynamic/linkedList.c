@@ -105,7 +105,7 @@ void byteLinkedListInsert(ByteLinkedList* inHere, uint32_t afterThisIndex, ByteL
     while (index < afterThisIndex)
     //  invariant: 0 <= index <= afterThisIndex
     //  invariant: `pLocation` points to index `index` in `inHere`
-    //  decreases: atThisIndex - index
+    //  decreases: afterThisIndex - index
     {
         index++;
         pLocation = (*pLocation).next;
@@ -117,3 +117,86 @@ void byteLinkedListInsert(ByteLinkedList* inHere, uint32_t afterThisIndex, ByteL
 
 
 /* SECTION: generic linked list */
+
+LinkedList* newLinkedList(void) {
+    LinkedList* returnMe = malloc(sizeof(LinkedList) * 1);
+    returnMe->head = NULL; // NOTE: This NEEDS to be here for killLinkedList(). Otherwise, it might try to free un-allocated memory.
+    return returnMe;
+}
+
+void killLinkedList(LinkedList* me) {
+    free(me->head);
+    free(me);
+}
+
+LinkedListNode* newLinkedListNode(void* pData) {
+    LinkedListNode* returnMe = malloc(sizeof(LinkedListNode) * 1);
+    returnMe->data = pData;
+    returnMe->next = NULL;
+    return returnMe;
+}
+
+void killLinkedListNode(LinkedListNode* me) {
+    // I don't have access to a Stack data structure yet, so this is implemented by recursion.
+    // The recursion eats up
+    //  # Math: \Theta(\text{length of stuff downstream from } \texttt{me})
+    //  space on the call stack.
+    if (me == NULL) {
+        free(me);
+        return;
+    }
+    killLinkedListNode(me->next);
+    free(me->data);
+    free(me);
+}
+
+uint32_t linkedListLength(LinkedList* ofThis) {
+    LinkedListNode* pLocation = (*ofThis).head;
+    uint32_t length = 0;
+    while (pLocation != NULL) {
+        length++;
+        pLocation = (*pLocation).next;
+    }
+    return length;
+}
+
+void* linkedListGet(LinkedList* fromHere, uint32_t atThisIndex) {
+    LinkedListNode* pLocation = (*fromHere).head;
+    uint32_t index = 0;
+    while (index < atThisIndex) {
+        index++;
+        pLocation = (*pLocation).next;
+    }
+    return (*pLocation).data;
+}
+
+void linkedListSet(LinkedList* inHere, uint32_t atThisIndex, void* toThis) {
+    LinkedListNode* pLocation = (*inHere).head;
+    uint32_t index = 0;
+    while (index < atThisIndex) {
+        index++;
+        pLocation = (*pLocation).next;
+    }
+    free(pLocation->data); // NOTE: Freed
+    (*pLocation).data = toThis;
+}
+
+void linkedListPrepend(LinkedList* toThis, LinkedListNode* thisNode) {
+    (*thisNode).next = (*toThis).head;
+    (*toThis).head = thisNode;
+}
+
+void linkedListInsert(LinkedList* inHere, uint32_t afterThisIndex, LinkedListNode* thisNode) {
+    LinkedListNode* pLocation = (*inHere).head;
+    uint32_t index = 0;
+    while (index < afterThisIndex)
+    //  invariant: 0 <= index <= afterThisIndex
+    //  invariant: `pLocation` points to index `index` in `inHere`
+    //  decreases: afterThisIndex - index
+    {
+        index++;
+        pLocation = (*pLocation).next;
+    }
+    (*thisNode).next = (*pLocation).next;
+    (*pLocation).next = thisNode;
+}

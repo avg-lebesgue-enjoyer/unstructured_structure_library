@@ -25,6 +25,13 @@ int testByteLinkedListSet(void);
 int testByteLinkedListInsert(void);
 
 int testLinkedList(void);
+int testNewLinkedList(void);
+int testNewLinkedListNode(void);
+int linkedListBuilds(void);
+int testLinkedListLength(void);
+int testLinkedListGet(void);
+int testLinkedListSet(void);
+int testLinkedListInsert(void);
 
 
 

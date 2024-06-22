@@ -22,11 +22,7 @@ int testLinkedListDotC(void) {
     printf("<?> Running tests in testLinkedList.c...\n");
     int result =
         testByteLinkedList()
-        + testLinkedList()
-        + testByteLinkedListLength()
-        + testByteLinkedListGet()
-        + testByteLinkedListSet()
-        + testByteLinkedListInsert();
+        + testLinkedList();
     printf("<?> ...end tests in testLinkedList.c; %d tests failed.\n", result);
     return result;
 }
@@ -40,7 +36,11 @@ int testByteLinkedList(void) {
     int result =
         byteLinkedListConstructs()
         + byteLinkedListNodeConstructs()
-        + byteLinkedListBuilds();
+        + byteLinkedListBuilds()
+        + testByteLinkedListLength()
+        + testByteLinkedListGet()
+        + testByteLinkedListSet()
+        + testByteLinkedListInsert();
     printf("<?> ...end tests in testLinkedList.c ~> testByteLinkedList(); %d tests failed.\n", result);
     return result;
 }
@@ -73,11 +73,11 @@ int byteLinkedListBuilds(void) {
     // Traverse linked list for funsies
     ByteLinkedListNode* pLocation = list->head;
     for (uint32_t index = 0; index < 3; index++) {
-        printf("\tIndex %d stores data 0x%02x with next pointer 0x%p", 
+        printf("\tIndex %d stores data 0x%02x with next pointer 0x%p\n", 
                 index, pLocation->data, pLocation->next);
         pLocation = pLocation->next; // Equivalent to `pLocation = (*pLocation).next`;
     }
-    printf("\tFinal location pointer is 0x%p", pLocation);
+    printf("\tFinal location pointer is 0x%p\n", pLocation);
     printf("<?> ...end test testLinkedList.c ~> byteLinkedListBuilds(); success.\n");
     killByteLinkedList(list);
     return 0;
@@ -163,7 +163,166 @@ int testByteLinkedListInsert(void) {
 int testLinkedList(void) {
     printf("<?> Running tests in testLinkedList.c ~> testLinkedList()...\n");
     int result =
-        0;
+        testNewLinkedList()
+        + testNewLinkedListNode()
+        + linkedListBuilds()
+        + testLinkedListLength()
+        + testLinkedListGet()
+        + testLinkedListSet()
+        + testLinkedListInsert();
     printf("<?> ...end tests in testLinkedList.c ~> testLinkedList(); %d tests failed.\n", result);
     return result;
+}
+
+int testNewLinkedList(void) {
+    printf("<?> Running test testLinkedList.c ~> testNewLinkedList()...\n");
+    LinkedList* fresh = newLinkedList(); // NOTE: Allocated memory must be freed
+    printf("\tNew LinkedList constructed with head address 0x%p\n", fresh->head);
+    killLinkedList(fresh); // NOTE: Allocated memory must be freed
+    printf("<?> ...end test testLinkedList.c ~> testNewLinkedList(); success.\n");
+    return 0;
+}
+
+int testNewLinkedListNode(void) {
+    printf("<?> Running test testLinkedList.c ~> testNewLinkedListNode()...\n");
+    uint16_t* payload = malloc(sizeof(uint16_t) * 1);
+    *payload = 0x0420;
+    LinkedListNode* fresh = newLinkedListNode(payload);
+    printf("\tNew LinkedListNode constructed with data byte 0x%04x and next address 0x%p\n", 
+            *((uint16_t*) fresh->data), fresh->next);
+    printf("<?> ...end test testLinkedList.c ~> testNewLinkedListNode(); success.\n");
+    killLinkedListNode(fresh);
+    return 0;
+}
+
+int linkedListBuilds(void) {
+    printf("<?> Running test testLinkedList.c ~> linkedListBuilds()...\n");
+    LinkedList* list = newLinkedList();
+    uint16_t* payload;
+    payload = malloc(sizeof(uint16_t) * 1);
+    *payload = 0x0690;
+    linkedListPrepend(list, newLinkedListNode(payload));
+    payload = malloc(sizeof(uint16_t) * 1);
+    *payload = 0x0420;
+    linkedListPrepend(list, newLinkedListNode(payload));
+    payload = malloc(sizeof(uint16_t) * 1);
+    *payload = 0x0ab0;
+    linkedListPrepend(list, newLinkedListNode(payload));
+    // Traverse linked list for funsies
+    LinkedListNode* pLocation = list->head;
+    for (uint32_t index = 0; index < 3; index++) {
+        printf("\tIndex %d stores data 0x%04x with next pointer 0x%p\n", 
+                index, *((uint16_t*) pLocation->data), pLocation->next);
+        pLocation = pLocation->next; // Equivalent to `pLocation = (*pLocation).next`;
+    }
+    printf("\tFinal location pointer is 0x%p\n", pLocation);
+    printf("<?> ...end test testLinkedList.c ~> linkedListBuilds(); success.\n");
+    killLinkedList(list);
+    return 0;
+}
+
+int testLinkedListLength(void) {
+    printf("<?> Running test testLinkedList.c ~> testLinkedListLength()...\n");
+    LinkedList* list = newLinkedList();
+    uint16_t* payload;
+    payload = malloc(sizeof(uint16_t) * 1);
+    *payload = 0x0690;
+    linkedListPrepend(list, newLinkedListNode(payload));
+    payload = malloc(sizeof(uint16_t) * 1);
+    *payload = 0x0420;
+    linkedListPrepend(list, newLinkedListNode(payload));
+    payload = malloc(sizeof(uint16_t) * 1);
+    *payload = 0x0ab0;
+    linkedListPrepend(list, newLinkedListNode(payload));
+    // <?>
+    if ( linkedListLength(list) == 3 ) {
+        printf("<?> ...end test testLinkedList.c ~> testLinkedListLength(); success.\n");
+        killLinkedList(list);
+        return 0;
+    } else {
+        printf("<?> F..end test testLinkedList.c ~> testLinkedListLength(); FAILURE.\n");
+        killLinkedList(list);
+        return 1;
+    }
+}
+
+int testLinkedListGet(void) {
+    printf("<?> Running test testLinkedList.c ~> testLinkedListGet()...\n");
+    LinkedList* list = newLinkedList();
+    uint16_t* payload;
+    payload = malloc(sizeof(uint16_t) * 1);
+    *payload = 0x0690;
+    linkedListPrepend(list, newLinkedListNode(payload));
+    payload = malloc(sizeof(uint16_t) * 1);
+    *payload = 0x0420;
+    linkedListPrepend(list, newLinkedListNode(payload));
+    payload = malloc(sizeof(uint16_t) * 1);
+    *payload = 0x0ab0;
+    linkedListPrepend(list, newLinkedListNode(payload));
+    // <?>
+    if ( *((uint16_t*) linkedListGet(list, 2)) == 0x0690 ) {
+        printf("<?> ...end test testLinkedList.c ~> testLinkedListGet(); success.\n");
+        killLinkedList(list);
+        return 0;
+    } else {
+        printf("<?> F..end test testLinkedList.c ~> testLinkedListGet(); FAILURE.\n");
+        killLinkedList(list);
+        return 1;
+    }
+}
+
+int testLinkedListSet(void) {
+    printf("<?> Running test testLinkedList.c ~> testLinkedListSet()...\n");
+    LinkedList* list = newLinkedList();
+    uint16_t* payload;
+    payload = malloc(sizeof(uint16_t) * 1);
+    *payload = 0x0690;
+    linkedListPrepend(list, newLinkedListNode(payload));
+    payload = malloc(sizeof(uint16_t) * 1);
+    *payload = 0x0420;
+    linkedListPrepend(list, newLinkedListNode(payload));
+    payload = malloc(sizeof(uint16_t) * 1);
+    *payload = 0x0ab0;
+    linkedListPrepend(list, newLinkedListNode(payload));
+    // <?>
+    payload = malloc(sizeof(uint16_t) * 1);
+    *payload = 0xabcd;
+    linkedListSet(list, 1, payload);
+    if ( *((uint16_t*) linkedListGet(list, 1)) == 0xabcd ) {
+        printf("<?> ...end test testLinkedList.c ~> testLinkedListSet(); success.\n");
+        killLinkedList(list);
+        return 0;
+    } else {
+        printf("<?> F..end test testLinkedList.c ~> testLinkedListSet(); FAILURE.\n");
+        killLinkedList(list);
+        return 1;
+    }
+}
+
+int testLinkedListInsert(void) {
+    printf("<?> Running test testLinkedList.c ~> testLinkedListInsert()...\n");
+    LinkedList* list = newLinkedList();
+    uint16_t* payload;
+    payload = malloc(sizeof(uint16_t) * 1);
+    *payload = 0x0690;
+    linkedListPrepend(list, newLinkedListNode(payload));
+    payload = malloc(sizeof(uint16_t) * 1);
+    *payload = 0x0420;
+    linkedListPrepend(list, newLinkedListNode(payload));
+    payload = malloc(sizeof(uint16_t) * 1);
+    *payload = 0x0ab0;
+    linkedListPrepend(list, newLinkedListNode(payload));
+    // <?>
+    payload = malloc(sizeof(uint16_t) * 1);
+    *payload = 0xabcd;
+    linkedListInsert(list, 1, newLinkedListNode(payload));
+    if ( *((uint16_t*) linkedListGet(list, 2)) == 0xabcd ) {
+        printf("<?> ...end test testLinkedList.c ~> testLinkedListInsert(); success.\n");
+        killLinkedList(list);
+        return 0;
+    } else {
+        printf("<?> F..end test testLinkedList.c ~> testLinkedListInsert(); FAILURE.\n");
+        killLinkedList(list);
+        return 1;
+    }
 }

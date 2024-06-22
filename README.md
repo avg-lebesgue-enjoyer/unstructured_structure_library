@@ -22,7 +22,7 @@ This is being shared publically for others' benefit. **I encourage you to write 
     - [x] Static
         - [x] Array
     - [ ] Dynamic
-        - [ ] Linked list
+        - [x] Linked list
         - [ ] Extensible list
 - [ ] Staques
     - [ ] Stack
@@ -101,6 +101,9 @@ This is being shared publically for others' benefit. **I encourage you to write 
 
 
 # Changelog
+
+### 2024-06-22_17-55
+- Implemented `linkedList.c`'s `LinkedList`.
 
 ### 2024-06-22_17-20
 - Finished writing tests for a linked list of bytes.

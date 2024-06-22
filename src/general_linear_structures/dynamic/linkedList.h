@@ -118,7 +118,7 @@ void byteLinkedListPrepend(ByteLinkedList* toThis, ByteLinkedListNode* thisNode)
 void byteLinkedListInsert(ByteLinkedList* inHere, uint32_t afterThisIndex, ByteLinkedListNode* thisNode);
 
 
-// FIXME: Implement all methods past this point!
+
 /**
  * @brief Construct a new, empty, singly linked list.
  * 
@@ -146,7 +146,8 @@ void killLinkedList(LinkedList* me);
 LinkedListNode* newLinkedListNode(void* pData);
 
 /**
- * @brief Free ALL MEMORY used by a specified linked list node, including stuff pointed to.
+ * @brief Free ALL MEMORY used by a specified linked list node, including nodes downstream, and
+ *        including data pointed to.
  * 
  * @param me `LinkedListNode*` to node to free.
  *           MUST not contain loops downstream.
@@ -172,6 +173,7 @@ void* linkedListGet(LinkedList* fromHere, uint32_t atThisIndex);
 
 /**
  * @brief Set the data pointed to at some index in a singly linked list to a prescribed pointer.
+ *        Frees the memory reserved by the pointer currently stored there.
  * 
  * @param inHere `LinkedList*` to index into
  * @param atThisIndex `uint32_t` index to overwrite data for. MUST be <= linkedListLength(fromHere).
@@ -189,13 +191,13 @@ void linkedListPrepend(LinkedList* toThis, LinkedListNode* thisNode);
 
 /**
  * @brief Insert a node into a singly linked list.
- *        ENSURES `new(index atThisIndex) = thisNode --> old(index atThisIndex)`.
+ *        ENSURES `new(index atThisIndex) = old(index atThisIndex) --> thisNode --> old(index atThisIndex + 1)`.
  * 
  * @param inHere `LinkedList*` to insert into
- * @param atThisIndex `uint32_t` index at which to place the new node. MUST be <= linkedListLength(inHere).
+ * @param afterThisIndex `uint32_t` index after which to place the new node. MUST be <= linkedListLength(inHere).
  * @param thisNode `LinkedListNode*` to insert
  */
-void linkedListInsert(LinkedList* inHere, uint32_t atThisIndex, LinkedListNode* thisNode);
+void linkedListInsert(LinkedList* inHere, uint32_t afterThisIndex, LinkedListNode* thisNode);
 
 
 
