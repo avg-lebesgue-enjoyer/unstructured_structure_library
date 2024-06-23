@@ -1,5 +1,5 @@
 /**
- * @file testArray.c
+ * @file testLinkedList.c
  * @author Gabriel Field
  * @brief Tests for Datas: Linked list
  * @version 0.1

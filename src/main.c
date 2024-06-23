@@ -50,7 +50,7 @@ int main(int argc, char *argv[]) {
             testBinsearchDotC();
         } else if (! strncmp(argv[arg], TESTLINKEDLIST, TESTLINKEDLISTLENGTH)) {
             testLinkedListDotC();
-        }
+        } // FIXME: Write tests for `extensibleList.c`!
     }
 
     return 0;

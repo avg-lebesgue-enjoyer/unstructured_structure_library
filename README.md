@@ -102,6 +102,13 @@ This is being shared publically for others' benefit. **I encourage you to write 
 
 # Changelog
 
+### 2024-06-23_22-05
+- `general_linear_structures/dynamic/extensibleList.c` has been written. **IT HAS NOT BEEN TESTED YET!**
+- `helpful.c` has been written. **IT ALSO HASN'T BEEN TESTED YET!**
+- Deepened understanding of how pointers work. Writing `extensibleList.c` only took so long because I didn't understand pointers as well as I hoped that I had.
+- Deepened understanding of how we actually write stuff into arrays. Like ik it sounds simple, *but if you don't know the compile-time type, then you have to do it byte-by-byte* -- this took a hot minute to click for me. This lead to writing `helpful.c`.
+- I know that I'm gonna use `ExtensibleList` very often, so I've put a lot of thought into how it works at present. The work is paying off already -- the code compiled first-try. Hopefully it's also *correct* first-try... probably not...
+
 ### 2024-06-23_19-25
 - `array.h ~> Array::cellSize` is now of type `size_t` (as it should have been from the beginning).
 

@@ -14,6 +14,13 @@
         "allthestructuretests.h": "c",
         "allthealgotests.h": "c",
         "allthealgos.h": "c",
-        "linkedlist.h": "c"
+        "linkedlist.h": "c",
+        "testlinkedlist.h": "c",
+        "testextensiblelist.h": "c",
+        "extensiblelist.h": "c",
+        "array": "c",
+        "string_view": "c",
+        "initializer_list": "c",
+        "vector": "c"
     }
 }

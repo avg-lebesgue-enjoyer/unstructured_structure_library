@@ -31,6 +31,9 @@ int main(int argc, char *argv[]);
 #define TESTLINKEDLIST "linkedList.c"
 #define TESTLINKEDLISTLENGTH (13)
 
+#define TESTEXTENSIBLELIST "extensibleList.c"
+#define TESTEXTENSIBLELISTLENGTH (17)
+
 
 
 #endif
