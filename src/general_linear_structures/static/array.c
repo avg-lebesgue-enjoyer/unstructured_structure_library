@@ -31,7 +31,7 @@ void killByteArray(ByteArray me) {
 
 /* SECTION: Generic array */
 
-Array newArray(uint32_t length, uint32_t cellSize) {
+Array newArray(uint32_t length, size_t cellSize) {
     // void* start = calloc(length, cellSize); // This is slower due to zero-initialisation!
     void* start = malloc(cellSize * length);
     Array returnMe = { .length = length, .cellSize = cellSize, .start = start };
@@ -50,7 +50,7 @@ uint8_t compareArrayElement(Array inHere, uint32_t atHere, void* againstThis) {
     uint8_t* pArrayByte;
     uint8_t* targetByte = againstThis; // NOTE: typecast (void*) --> (uint8_t*)
     uint8_t match = 1;
-    uint32_t j = 0;
+    size_t j = 0;
     while ((j < inHere.cellSize) && match) {
         // Compare byte j of inHere[i] against byte j of the target
         pArrayByte = inHere.start + atHere * inHere.cellSize + j; // NOTE: typecast (void*) --> (uint8_t*)

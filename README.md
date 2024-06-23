@@ -102,6 +102,9 @@ This is being shared publically for others' benefit. **I encourage you to write 
 
 # Changelog
 
+### 2024-06-23_19-25
+- `array.h ~> Array::cellSize` is now of type `size_t` (as it should have been from the beginning).
+
 ### 2024-06-22_17-55
 - Implemented `linkedList.c`'s `LinkedList`.
 

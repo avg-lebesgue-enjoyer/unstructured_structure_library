@@ -91,7 +91,7 @@ int arrayConstructs(void) {
     printf("<?> Running test testArray.c ~> arrayConstructs()...\n");
     Array test = newArray(10, sizeof(uint32_t));
     uint32_t* testStart = test.start; // NOTE: Type promotion (void*) --> (uint32_t*)
-    printf("\tNew array made with length %d and cell size %d, for holding values of type uint32_t\n", 
+    printf("\tNew array made with length %d and cell size %lld, for holding values of type uint32_t\n", 
             test.length, test.cellSize);
     for (uint32_t i = 0; i < test.length; i++) {
         printf("\tIndex %d stores %d\n", i, testStart[i]);

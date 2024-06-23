@@ -35,7 +35,7 @@ typedef struct ByteArray {
 /** (Probably very unsafe) array. */
 typedef struct Array {
     uint32_t length;    /** Length of the array. Going past this is a buffer overflow. */
-    uint32_t cellSize;  /** Size of each cell of the array. */
+    size_t   cellSize;  /** Size of each cell of the array. */
     void*    start;     /** Pointer to the zeroth cell of the array. */
 } Array;
 
@@ -65,7 +65,7 @@ void killByteArray(ByteArray me);
  * @param cellSize of each cell, in bytes
  * @return Array filled with garbage values
  */
-Array newArray(uint32_t length, uint32_t cellSize);
+Array newArray(uint32_t length, size_t cellSize);
 
 /**
  * @brief Free ALL MEMORY used by a specified array.
