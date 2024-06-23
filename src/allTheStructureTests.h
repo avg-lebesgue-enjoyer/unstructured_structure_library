@@ -3,5 +3,6 @@
 
 #include "general_linear_structures/static/test/testArray.h"
 #include "general_linear_structures/dynamic/test/testLinkedList.h"
+#include "general_linear_structures/dynamic/test/testExtensibleList.h"
 
 #endif
